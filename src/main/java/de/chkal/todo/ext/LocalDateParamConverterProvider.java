@@ -11,34 +11,34 @@ import java.time.format.DateTimeFormatter;
 @Provider
 public class LocalDateParamConverterProvider implements ParamConverterProvider {
 
-  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_DATE;
+   private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_DATE;
 
-  @Override
-  public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
+   @Override
+   public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
 
-    if (LocalDate.class.equals(rawType)) {
+      if (LocalDate.class.equals(rawType)) {
 
-      return new ParamConverter<T>() {
+         return new ParamConverter<T>() {
 
-        @Override
-        public T fromString(String value) {
-          if (value != null && value.trim().length() > 0) {
-            return (T) LocalDate.parse(value, FORMATTER);
-          }
-          return null;
-        }
+            @Override
+            public T fromString(String value) {
+               if (value != null && value.trim().length() > 0) {
+                  return (T) LocalDate.parse(value, FORMATTER);
+               }
+               return null;
+            }
 
-        @Override
-        public String toString(T value) {
-          return ((LocalDate) value).format(FORMATTER);
-        }
+            @Override
+            public String toString(T value) {
+               return ((LocalDate) value).format(FORMATTER);
+            }
 
-      };
+         };
 
-    }
+      }
 
-    return null;
+      return null;
 
-  }
+   }
 
 }

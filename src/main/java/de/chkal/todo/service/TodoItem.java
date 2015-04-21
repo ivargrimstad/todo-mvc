@@ -3,65 +3,65 @@ package de.chkal.todo.service;
 import java.time.LocalDate;
 
 /**
- * The model object representing a single item.
- * Could be an JPA entity in real world applications.
+ * The model object representing a single item. Could be an JPA entity in real world applications.
  */
 public class TodoItem {
 
-  public enum Priority {
-    LOW,
-    MEDIUM,
-    HIGH
-  }
+   public enum Priority {
 
-  private long id;
+      LOW,
+      MEDIUM,
+      HIGH
+   }
 
-  private String title;
+   private long id;
 
-  private Priority priority;
+   private String title;
 
-  private LocalDate dueDate;
+   private Priority priority;
 
-  public TodoItem() {
-    // default constructor
-  }
+   private LocalDate dueDate;
 
-  public TodoItem(long id, String title, Priority priority, LocalDate dueDate) {
-    this.id = id;
-    this.title = title;
-    this.priority = priority;
-    this.dueDate = dueDate;
-  }
+   public TodoItem() {
+      // default constructor
+   }
 
-  public String getTitle() {
-    return title;
-  }
+   public TodoItem(long id, String title, Priority priority, LocalDate dueDate) {
+      this.id = id;
+      this.title = title;
+      this.priority = priority;
+      this.dueDate = dueDate;
+   }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+   public String getTitle() {
+      return title;
+   }
 
-  public long getId() {
-    return id;
-  }
+   public void setTitle(String title) {
+      this.title = title;
+   }
 
-  public void setId(long id) {
-    this.id = id;
-  }
+   public long getId() {
+      return id;
+   }
 
-  public Priority getPriority() {
-    return priority;
-  }
+   public void setId(long id) {
+      this.id = id;
+   }
 
-  public void setPriority(Priority priority) {
-    this.priority = priority;
-  }
+   public Priority getPriority() {
+      return priority;
+   }
 
-  public LocalDate getDueDate() {
-    return dueDate;
-  }
+   public void setPriority(Priority priority) {
+      this.priority = priority;
+   }
 
-  public void setDueDate(LocalDate dueDate) {
-    this.dueDate = dueDate;
-  }
+   public LocalDate getDueDate() {
+      return dueDate;
+   }
+
+   public void setDueDate(LocalDate dueDate) {
+      this.dueDate = dueDate;
+   }
 }
